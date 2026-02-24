@@ -1,72 +1,74 @@
 # Hospital-management-system-c-project
-🏥 Hospital Management System (C++ Project)
+<h1 align="center">🏥 Hospital Management System (C++ Project)</h1>
 
-A console-based Hospital Management System developed in C++ as a semester project.
-This system manages patient records, billing, and online appointment booking using fundamental programming concepts.
+<p align="center">
+A Console-Based Hospital Management System developed using C++.<br>
+This project demonstrates core programming concepts including structures, arrays, loops, conditions, file handling, and modular functions.
+</p>
 
-📌 Project Description
+<hr>
 
-This project simulates a real-world hospital environment where:
+<h2>📌 Project Overview</h2>
 
-Patients can be registered
+<p>
+The Hospital Management System is a menu-driven console application that manages:
+</p>
 
-Bills are automatically calculated
+<ul>
+  <li>Patient Registration</li>
+  <li>Automatic Department Assignment (ICU / OPD)</li>
+  <li>Emergency Detection</li>
+  <li>Complete Billing System</li>
+  <li>Online Appointment Booking</li>
+  <li>Search and Delete Patient Records</li>
+  <li>Permanent Data Storage using File Handling</li>
+</ul>
 
-Departments are assigned automatically
+<hr>
 
-Emergency cases are detected
+<h2>🎯 Programming Concepts Used</h2>
 
-Appointments can be booked online
+<ul>
+  <li><b>Structures (struct)</b></li>
+  <li><b>Arrays</b></li>
+  <li><b>Conditional Statements (if, else, switch)</b></li>
+  <li><b>Loops (for, while, do-while)</b></li>
+  <li><b>Functions (Modular Programming)</b></li>
+  <li><b>File Handling (ifstream, ofstream)</b></li>
+  <li><b>Global Variables</b></li>
+  <li><b>Input Validation</b></li>
+</ul>
 
-Records are stored permanently using file handling
+<hr>
 
-The system is completely menu-driven and runs in the console.
+<h2>🛠️ Technology Used</h2>
 
-🎯 Programming Concepts Used
+<ul>
+  <li><b>Language:</b> C++</li>
+  <li><b>Libraries:</b> iostream, fstream, string</li>
+  <li><b>Platform:</b> Console Application</li>
+</ul>
 
-This project demonstrates strong understanding of:
+<hr>
 
-✅ Structures (struct)
+<h2>📂 Project Structure</h2>
 
-✅ Arrays
-
-✅ Conditional Statements (if, else, switch)
-
-✅ Loops (for, while, do-while)
-
-✅ Functions (Modular Programming)
-
-✅ File Handling (ifstream, ofstream)
-
-✅ Global Variables
-
-✅ Input Validation
-
-✅ Billing System Logic
-
-🛠️ Technology Used
-
-Language: C++
-
-Libraries Used:
-
-<iostream>
-
-<fstream>
-
-<string>
-
-Platform: Console Application
-
-📂 Project Structure
+<pre>
 Hospital-Management-System/
 │
 ├── main.cpp
 ├── patient.txt
 ├── appointment.txt
 └── README.md
-🧠 System Architecture
-1️⃣ Patient Structure
+</pre>
+
+<hr>
+
+<h2>🧠 System Structures</h2>
+
+<h3>1️⃣ Patient Structure</h3>
+
+<pre>
 struct person {
     int id, age;
     string name, disease;
@@ -81,10 +83,11 @@ struct person {
     int operationFee;
     int dayStay, totalFee;
 };
+</pre>
 
-Stores complete patient medical and billing information.
+<h3>2️⃣ Appointment Structure</h3>
 
-2️⃣ Appointment Structure
+<pre>
 struct appointment {
     string patientName;
     string phone;
@@ -92,113 +95,86 @@ struct appointment {
     string doctorName;
     string timing;
 };
+</pre>
 
-Used for online appointment booking.
+<hr>
 
-🚀 Features
-🔹 1. Patient Registration
+<h2>🚀 System Features</h2>
 
-Validates ID, Name, Disease
+<h3>🔹 Patient Registration</h3>
+<ul>
+  <li>Validates ID, Name, and Disease</li>
+  <li>Automatically assigns department</li>
+  <li>Automatically detects emergency cases</li>
+  <li>Calculates full hospital bill</li>
+  <li>Saves data to <b>patient.txt</b></li>
+</ul>
 
-Automatically assigns:
-
-Department (ICU / OPD)
-
-Emergency status (YES / NO)
-
-Calculates full hospital bill
-
-Stores data in patient.txt
-
-🔹 2. Automatic Department Selection
-string autoDepartment(string disease)
-
-ICU → fracture, heart attack, kidney failure
-
+<h3>🔹 Automatic Department Selection</h3>
+<p>
+ICU → fracture, heart attack, kidney failure<br>
 OPD → other diseases
+</p>
 
-🔹 3. Automatic Emergency Detection
-string autoEmergency(string disease)
-
-YES → stroke, heart attack, kidney failure
-
+<h3>🔹 Automatic Emergency Detection</h3>
+<p>
+YES → stroke, heart attack, kidney failure<br>
 NO → others
+</p>
 
-🔹 4. Complete Billing System
+<h3>🔹 Complete Billing System</h3>
 
-Billing Includes:
+<p><b>Billing Includes:</b></p>
+<ul>
+  <li>Registration Fee</li>
+  <li>Doctor Fee</li>
+  <li>Test Fee</li>
+  <li>Medicine Fee</li>
+  <li>Operation Fee</li>
+  <li>Daily Stay Charges (1000 per day)</li>
+</ul>
 
-Registration Fee
+<p><b>Final Bill Formula:</b></p>
 
-Doctor Fee
-
-Test Fee
-
-Medicine Fee
-
-Operation Fee
-
-Daily Stay Charges (1000 per day)
-
-Final Bill Calculation:
-
+<pre>
 totalFee = registrationFee + doctorFee + medicineFee 
          + testFee + (dayStay × 1000)
-🔹 5. Online Appointment Booking
+</pre>
 
-Patient enters details
+<hr>
 
-Selects doctor:
+<h3>🔹 Online Appointment Booking</h3>
 
-Dr. Ahmed (9AM–12PM)
+<ul>
+  <li>Enter Patient Details</li>
+  <li>Select Doctor:</li>
+  <ul>
+    <li>Dr. Ahmed (9AM - 12PM)</li>
+    <li>Dr. Sara (12PM - 4PM)</li>
+    <li>Dr. Ali (4PM - 8PM)</li>
+  </ul>
+  <li>Saved in <b>appointment.txt</b></li>
+</ul>
 
-Dr. Sara (12PM–4PM)
+<hr>
 
-Dr. Ali (4PM–8PM)
+<h3>🔹 Search Patient</h3>
+<ul>
+  <li>Search by ID</li>
+  <li>Search by Name</li>
+</ul>
 
-Stored in appointment.txt
+<h3>🔹 Delete Patient Record</h3>
+<ul>
+  <li>Delete using ID or Name</li>
+  <li>File automatically updates</li>
+</ul>
 
-🔹 6. File Handling
-Patient Records
+<hr>
 
-saveAllPatientsToFile()
+<h2>🖥️ Main Menu</h2>
 
-readFromFile()
-
-Stored in:
-
-patient.txt
-Appointment Records
-
-saveAppointmentToFile()
-
-readAppointmentsFromFile()
-
-Stored in:
-
-appointment.txt
-
-Data remains saved even after program closes.
-
-🔹 7. Search Patient
-
-Search by:
-
-ID
-
-Name
-
-🔹 8. Delete Patient Record
-
-Deletes a patient using:
-
-ID
-
-Name
-
-File updates automatically after deletion.
-
-🖥️ Main Menu
+<pre>
 1. Register Patient
 2. Review Patient Record
 3. Online Book Appointment
@@ -206,71 +182,64 @@ File updates automatically after deletion.
 5. Search By Name
 6. Delete Patient Record
 7. Exit
+</pre>
 
-The system runs using a do-while loop until the user selects Exit.
+<hr>
 
-🔐 Input Validation
+<h2>▶️ How to Run</h2>
 
-The system ensures:
+<h3>Step 1: Compile</h3>
 
-ID must be greater than 0
-
-Name cannot be empty
-
-Disease cannot be empty
-
-Full payment required before proceeding
-
-📊 Data Storage Logic
-
-Uses global arrays
-
-patient[MAX]
-
-app[200]
-
-Uses global counters:
-
-count
-
-appCount
-
-▶️ How to Run
-Step 1: Compile
+<pre>
 g++ main.cpp -o hospital
-Step 2: Run
+</pre>
+
+<h3>Step 2: Run</h3>
+
+<pre>
 ./hospital
-📈 Learning Outcomes
+</pre>
 
-Through this project, the following skills were developed:
+<hr>
 
-Structured programming
+<h2>📈 Learning Outcomes</h2>
 
-Real-world problem solving
+<ul>
+  <li>Understanding structured programming</li>
+  <li>Applying real-world billing logic</li>
+  <li>Working with file storage systems</li>
+  <li>Implementing modular programming</li>
+  <li>Building a complete menu-driven system</li>
+</ul>
 
-File-based data management
+<hr>
 
-Function modularization
+<h2>🔮 Future Improvements</h2>
 
-Logical thinking and validation
+<ul>
+  <li>Admin Login System</li>
+  <li>Graphical User Interface (GUI)</li>
+  <li>Database Integration (MySQL)</li>
+  <li>Dynamic Memory Allocation</li>
+  <li>Advanced Billing with Receipt Printing</li>
+</ul>
 
-Billing system implementation
+<hr>
 
-🔮 Future Improvements
+<h2>👨‍💻 Author</h2>
 
-Admin login authentication
-
-GUI (Graphical User Interface)
-
-Database integration (MySQL)
-
-Dynamic memory allocation
-
-Improved error handling
-
-Advanced billing system with receipt printing
-
-👨‍💻 Author
-MalikFAIZ ANWAR
-BS AI – First Semester
+<p>
+MalikFAIZ ANWAR<br>
+BS AI – First Semester<br>
 C++ Programming Project
+</p>
+
+<hr>
+
+<p align="center">
+⭐ If you like this project, don't forget to give it a star!
+</p>
+
+
+
+
